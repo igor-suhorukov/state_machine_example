@@ -1,0 +1,36 @@
+@startuml
+state "ученик старших классов" as state5
+state "ученик средней школы" as state3
+state "основное общее образование" as state4
+state "среднее общее образование" as state6
+state "аспирант" as state11
+state "претендент на ученую степень" as state12
+state "среднее профессиональное образование" as state8
+state "учащийся института" as state9
+state "кандидат наук" as state13
+state "больше не обучается" as state14
+state "ходит в детсадик" as state1
+state "оконченное высшее образование" as state10
+state "ученик начальной школы" as state2
+state "учащийся техникума" as state7
+state0 --> state1 : age>=3 and desire_to_learn
+state1 --> state2 : age>=7 and exams is null and desire_to_learn
+state2 --> state3 : age>=11 and exams is null and desire_to_learn
+state3 --> state4 : age>=15 and exams='выпускные экзамены в 9 классе'
+state4 --> state5 : age>=16 and exams='выпускные экзамены в 9 классе' and desire_to_learn
+state5 --> state6 : age>=17 and exams='выпускные экзамены в 11 классе'
+state4 --> state7 : age>=16 and exams='вступительные экзамены в техникум' and desire_to_learn
+state7 --> state8 : age>=18 and exams='защита диплома'
+state6 --> state9 : age>=18 and exams='вступительные экзамены в ВУЗ' and desire_to_learn
+state8 --> state9 : age>=18 and exams='вступительные экзамены в ВУЗ' and desire_to_learn
+state9 --> state10 : age>=22 and exams='защита диплома' and desire_to_learn
+state10 --> state11 : age>=22  and exams='экзамены в аспирантуру' and desire_to_learn
+state11 --> state12 : age>=25 and exams='кандидатский минимум' and desire_to_learn
+state12 --> state13 : age>=25 and exams='защита диссертации' and desire_to_learn
+state4 --> state14 : not(desire_to_learn)
+state4 --> state14 : not(desire_to_learn)
+state6 --> state14 : not(desire_to_learn)
+state8 --> state14 : not(desire_to_learn)
+state10 --> state14 : not(desire_to_learn)
+state13 --> state14 : not(desire_to_learn)
+@enduml
