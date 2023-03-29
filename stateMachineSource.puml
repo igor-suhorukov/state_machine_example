@@ -25,7 +25,7 @@ state6 --> state9 : age>=18 and exams='вступительные экзамен
 state8 --> state9 : age>=18 and exams='вступительные экзамены в ВУЗ' and desire_to_learn
 state9 --> state10 : age>=22 and exams='защита диплома' and desire_to_learn
 state10 --> state11 : age>=22  and exams='экзамены в аспирантуру' and desire_to_learn
-state11 --> state12 : age>=25 and exams='кандидатский минимум' and desire_to_learn
+state11 --> state12 : age>=24 and exams='кандидатский минимум' and desire_to_learn
 state12 --> state13 : age>=25 and exams='защита диссертации' and desire_to_learn
 state4 --> state14 : not(desire_to_learn)
 state4 --> state14 : not(desire_to_learn)
