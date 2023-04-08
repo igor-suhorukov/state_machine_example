@@ -2,7 +2,7 @@
 1	2	ученик начальной школы	age>=7 and exams is null and desire_to_learn
 2	3	ученик средней школы	age>=11 and exams is null and desire_to_learn
 3	4	основное общее образование	age>=15 and exams='выпускные экзамены в 9 классе'
-4	5	ученик старших классов	age>=16 and exams='выпускные экзамены в 9 классе' and desire_to_learn
+4	5	ученик старших классов	age>=15 and desire_to_learn
 5	6	среднее общее образование	age>=17 and exams='выпускные экзамены в 11 классе'
 4	7	учащийся техникума	age>=16 and exams='вступительные экзамены в техникум' and desire_to_learn
 7	8	среднее профессиональное образование	age>=18 and exams='защита диплома'
@@ -12,7 +12,6 @@
 10	11	аспирант	age>=22  and exams='экзамены в аспирантуру' and desire_to_learn
 11	12	претендент на ученую степень	age>=24 and exams='кандидатский минимум' and desire_to_learn
 12	13	кандидат наук	age>=25 and exams='защита диссертации' and desire_to_learn
-4	14	больше не обучается	not(desire_to_learn)
 4	14	больше не обучается	not(desire_to_learn)
 6	14	больше не обучается	not(desire_to_learn)
 8	14	больше не обучается	not(desire_to_learn)
