@@ -1,3 +1,4 @@
+0	0	появился на свет
 0	1	ходит в детсадик	age>=3 and desire_to_learn
 1	2	ученик начальной школы	age>=7 and exams is null and desire_to_learn
 2	3	ученик средней школы	age>=11 and exams is null and desire_to_learn
