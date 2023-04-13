@@ -40,8 +40,9 @@ public class StateMachineGenerator {
                     .append("--").append(stateName.get(fromEntry.getKey())).append('\n');
             builder.append("\tCASE\n").append(fromEntry.getValue().entrySet().stream()
                     .map(toEntry -> "\t\tWHEN transition->'st" + fromEntry.getKey() + "_" + toEntry.getKey()
-                            + "'='true' THEN " + toEntry.getKey()+" --"
-                            + toEntry.getValue()).collect(Collectors.joining("\n"))).
+                            + "'='true' -- " + toEntry.getValue()
+                            + "\n\t\t\tTHEN " + toEntry.getKey()
+                            + " --" + stateName.get(toEntry.getKey())).collect(Collectors.joining("\n"))).
                     append("\n\t\tELSE state\n\tEND\n");
             return builder.toString();
         }).collect(Collectors.joining())+"\tELSE state\nEND\n";
