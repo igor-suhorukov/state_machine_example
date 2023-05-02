@@ -1,0 +1,12 @@
+@startuml
+state "State3" as state0
+state "State0" as state1
+state "State2" as state2
+state "State1" as state3
+state0 --> state1 : rule4
+state2 --> state0 : rule3
+[*] --> state1 : true
+state1 --> state3 : rule1
+state3 --> state2 : rule2
+state0 --> [*] : rule5
+@enduml
