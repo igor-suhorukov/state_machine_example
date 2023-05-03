@@ -11,6 +11,9 @@ import javax.xml.xpath.XPathFactory;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Convert from Draw.io format state diagram into PlantUML format
+ */
 public class ConvertDrawIoToPlantUml {
     private static class Transition{
         String from;
