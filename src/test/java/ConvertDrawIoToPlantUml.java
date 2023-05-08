@@ -82,17 +82,17 @@ public class ConvertDrawIoToPlantUml {
             if("[*]".equals(stateIdToNumber.get(stateId))){
                 return;
             }
-            plantUml.append("state \"").append(state.state).append("\" as state").
+            plantUml.append("state \"").append(state.state).append("\" as ").
                     append(stateIdToNumber.get(stateId)).append("\n");
             if(state.description != null){
-                plantUml.append("state").append(stateIdToNumber.get(stateId)).append(" : ").
+                plantUml.append("").append(stateIdToNumber.get(stateId)).append(" : ").
                         append(state.description).append("\n");
             }
         });
         transitions.forEach(transition -> {
-            plantUml.append("[*]".equals(stateIdToNumber.get(transition.from))?"":"state").
+            plantUml.append("[*]".equals(stateIdToNumber.get(transition.from))?"":"").
                         append(stateIdToNumber.get(transition.from)).append(" --> ").
-                        append("[*]".equals(stateIdToNumber.get(transition.to))?"":"state").
+                        append("[*]".equals(stateIdToNumber.get(transition.to))?"":"").
                         append(stateIdToNumber.get(transition.to)).append(" : ").
                         append(transition.rule).append("\n");
         });
